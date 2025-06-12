@@ -1,0 +1,509 @@
+﻿.hero-section {
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.hero-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: url('SedePrincipal.jpg') center top 25% / cover no-repeat;
+    height: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay-text {
+    position: absolute;
+    top: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+    .hero-overlay-text h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .hero-overlay-text p {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+.hero-search-card {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 135px;
+    width: 90%;
+    max-width: 900px;
+    background-color: #1B1A55;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+    .hero-search-card .search-fields {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-search-card .hero-info-block {
+        flex: 1;
+        background-color: #0E0D2B;
+        color: #F1F1F1;
+        padding: 0.8rem;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+    }
+
+    .hero-search-card .hero-info-title {
+        margin: 0 0 0.3rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #F1F1F1;
+    }
+
+    .hero-search-card .hero-info-text {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #D1D1D1;
+    }
+
+    .hero-search-card .hero-button-wrapper {
+        margin-top: 1.2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-search-card .hero-search-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1.5px solid #535C91;
+        border-radius: 150px;
+        background-color: transparent;
+        color: #F1F1F1;
+        font-weight: bold;
+        transition: all 0.5s ease;
+        padding: 10px 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+    }
+
+        .hero-search-card .hero-search-btn:hover {
+            background-color: #535C91;
+            animation: glow 1.5s infinite alternate;
+            transform: scale(1.05);
+        }
+
+.info-cards {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+    .info-card h2 {
+        font-size: 1.8rem;
+        color: #F1F1F1;
+    }
+
+    .info-card p {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+.txt-sedes {
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.promo-container {
+    display: flex;
+    gap: 2rem;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.main-offer {
+    flex: 1;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wave-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 100px;
+    z-index: 1;
+}
+
+.sofa-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: translateY(25%);
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 10%;
+    right: -18%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+
+    .cta-button:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+.content-section {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    z-index: 2;
+    color: white;
+    max-width: 80%;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.offer-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.info-boxes {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    min-width: 110px;
+    max-width: 130px;
+}
+
+    .info-box h3 {
+        margin: 0 0 0.3rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .info-box p {
+        margin: 0;
+        font-size: 0.75rem;
+    }
+
+.dual-display {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.glass-card {
+    position: relative;
+    flex: 1 1 50%;
+    min-height: 225px;
+    min-width: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0.5rem;
+    background-image: url('HabitacionCartagena.jpg');
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-blend-mode: soft-light;
+    backdrop-filter: blur(15px);
+}
+
+.left-half {
+    background-position: left center;
+}
+
+.right-half {
+    background-position: right center;
+}
+
+.glass-cardt {
+    position: relative;
+    flex: 1 1 50%;
+    min-height: 225px;
+    min-width: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0.5rem;
+    background-image: url('HabitacionTokio.jpg');
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-blend-mode: soft-light;
+    backdrop-filter: blur(15px);
+}
+
+.left-halft {
+    background-position: left center;
+}
+
+.right-halft {
+    background-position: right center;
+}
+
+/* --- Seccion de hotel invertido --- */
+
+.promo-section01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 5rem 0 2rem 0;
+    box-sizing: border-box;
+}
+
+.promo-container01 {
+    display: flex;
+    gap: 2rem;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.main-offer01 {
+    flex: 1;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    order: 2;
+}
+
+.wave-decoration1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.wave-decoration2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+
+.image-wrapper01 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 100px;
+    z-index: 1;
+}
+
+.sofa-image01 {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: translateY(25%);
+}
+
+.cta-button01 {
+    position: absolute;
+    bottom: 10%;
+    right: -18%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+
+    .cta-button01:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+.content-section01 {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    z-index: 2;
+    color: white;
+    max-width: 80%;
+}
+
+.info-header01 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.offer-title01 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.info-boxes01 {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.info-box01 {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    min-width: 110px;
+    max-width: 130px;
+}
+
+    .info-box01 h3 {
+        margin: 0 0 0.3rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .info-box01 p {
+        margin: 0;
+        font-size: 0.75rem;
+    }
+
+.dual-display01 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    order: 1;
+}
+
+.glass-card01 {
+    position: relative;
+    flex: 1 1 50%;
+    min-height: 225px;
+    min-width: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0.5rem;
+    background-image: url('HabitacionBarcelona.jpg');
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-blend-mode: soft-light;
+    backdrop-filter: blur(15px);
+}
+
+.left-half01 {
+    background-position: left center;
+}
+
+.right-half01 {
+    background-position: right center;
+}
