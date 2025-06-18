@@ -1,0 +1,320 @@
+/*
+Fuentes:
+
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: logo;
+  src: url(MAROLA__.TTF);
+}
+*/
+
+/* --- Estilos generales --- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overscroll-behavior: none;
+}
+
+body {
+    background: radial-gradient(circle at 10% 20%, rgba(83, 92, 145, 0.12) 0%, transparent 25%), radial-gradient(circle at 90% 50%, rgba(146, 144, 195, 0.12) 0%, transparent 30%), radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 35%), linear-gradient(135deg, #070F2B 0%, #1B1A55 100%);
+    background-blend-mode: screen, screen, screen, normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #F1F1F1;
+    position: relative;
+}
+
+@font-face {
+    font-family: logo;
+    src: url(MAROLA__.TTF);
+}
+
+/* --- NavBar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 1000;
+    padding: 15px 2rem;
+    margin-top: 30px;
+    background: rgba(27, 26, 85, 0.25);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(83, 92, 145, 0.3);
+    outline: 1px solid rgba(83, 92, 145, 0.15);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .navbar-container a {
+        text-decoration: none;
+    }
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    font-weight: 200;
+}
+
+.logo {
+    font-family: logo, sans-serif;
+    font-size: 2rem;
+    color: #CBD0F7;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #F1F1F1;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+    .nav-links a svg {
+        color: #F1F1F1;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: #535C91;
+        transition: width 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+.nav-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-btn-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+
+    .nav-btn-link svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        fill: currentColor;
+    }
+
+    .nav-btn-link:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+.user-btn {
+    width: auto;
+    height: auto;
+    padding: 10px 16px;
+    border-radius: 150px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background: rgba(27, 26, 85, 0.85);
+    border: 1px solid #535C91;
+    border-radius: 15px;
+    padding: 0.5rem 0;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+    z-index: 1001;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(12px);
+}
+
+    .dropdown-menu p {
+        padding: 10px 20px;
+        color: #F1F1F1;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.3s;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .dropdown-menu a {
+        padding: 10px 20px;
+        color: #F1F1F1;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.3s;
+        font-family: "Montserrat", sans-serif;
+    }
+
+        .dropdown-menu a:hover {
+            background-color: #535C91;
+        }
+
+
+body::before {
+    content: '';
+    display: block;
+    height: 80px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+}
+
+    button svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        fill: currentColor;
+    }
+
+    button:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px 3px #9290C3aa;
+    }
+
+    50% {
+        box-shadow: 0 0 20px 8px #F1F1F1cc;
+    }
+}
+
+/* SVG decorativos de fondo */
+.svg-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.svg-deco {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    filter: blur(80px);
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+.deco-1 {
+    top: -150px;
+    left: -100px;
+}
+
+.deco-2 {
+    bottom: -100px;
+    right: -120px;
+}
+
+
+/* --- Footer --- */
+.footer {
+    color: #F1F1F1;
+    padding: 2rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 200px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    .footer-content a {
+        text-decoration: none;
+    }
+
+.footer-logo {
+    font-family: logo;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #CBD0F7;
+}
+
+.footer-rights {
+    font-size: 0.9rem;
+}

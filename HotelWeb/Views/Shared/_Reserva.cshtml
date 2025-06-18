@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>Sang - Reservar</title>
+<link href="~/css/Reservas.css" rel="stylesheet" asp-asp-append-version="true" />
+<section class="product-section">
+    <div class="product-container">
+        <div class="product-gallery">
+            <div class="progress-bar">
+                <div class="progress-segment" id="segment-0"></div>
+                <div class="progress-segment" id="segment-1"></div>
+                <div class="progress-segment" id="segment-2"></div>
+            </div>
+            <img src="" class="main-image fade-in" id="mainImage" />
+            <div class="thumbnail-row">
+                @RenderSection("thumb", required: true)
+            </div>
+        </div>
+        <div class="reservation-form">
+            @RenderSection("FormContent", required: true)
+        </div>
+    </div>
+</section>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<script src="~/js/AnimacionReservas.js"></script>
+

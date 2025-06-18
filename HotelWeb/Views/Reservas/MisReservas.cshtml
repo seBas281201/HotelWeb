@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HotelWeb.ViewModels.MisReservasVM>
+<title>Sang - Mis reservas</title>
+<link href="~/css/MisReservas.css" rel="stylesheet" asp-append-version="true"/>
+<div class="hero-wrapper">
+    <div class="hero-text">
+        <h1>
+            Aquí podrás ver tu historial de
+            <span class="sang-container">
+                <span class="gradient-text">reservas</span>
+                <svg class="decorative-curve" width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sangGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9A8CFF" />
+                            <stop offset="50%" stop-color="#6F5CC2" />
+                            <stop offset="100%" stop-color="#3E3A70" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,30 C50,10 150,10 200,30" stroke="url(#sangGradient)" stroke-width="3" fill="none" />
+                    <path d="M0,35 C50,15 150,15 200,35" stroke="url(#sangGradient)" stroke-width="2" fill="none" opacity="0.6" />
+                </svg>
+            </span>
+
+        </h1>
+        <p>Con todos sus detalles.</p>
+    </div>
+</div>
+
+<section class="app-card-section">
+    <div class="card-grid">
+        @foreach(var MisR in Model){
+
+            <div class="app-card">
+                <div class="logo-container">
+                    <div class="app-icon">
+                        <span class="icon-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="logo-texts">
+                        <h2 class="app-name">@MisR.NombreHabitacion</h2>
+                        <p class="app-habitacion">@MisR.Categoria</p>
+                    </div>
+                </div>
+                <div class="app-meta">
+                    <div class="meta-row top-row">
+                        <div class="meta-block">
+                            <p class="meta-label">ID reserva</p>
+                            <p class="meta-value">@MisR.IdReserva</p>
+                        </div>
+                        <div class="meta-block">
+                            <p class="meta-label">Nro de huespedes</p>
+                            <p class="meta-value">@MisR.Huespedes</p>
+                        </div>
+                        <div class="meta-block">
+                            <p class="meta-label">Sede</p>
+                            <p class="meta-value">@MisR.Sede</p>
+                        </div>
+                    </div>
+                    <div class="meta-row bottom-row">
+                        <div class="meta-block">
+                            <p class="meta-label">Fecha Entrada</p>
+                            <p class="meta-value">@MisR.Ingreso</p>
+                        </div>
+                        <div class="meta-block">
+                            <p class="meta-label">Fecha Salida</p>
+                            <p class="meta-value">@MisR.Salida</p>
+                        </div>
+                    </div>
+                    <div class="meta-block">
+                        <p class="meta-label">Precio</p>
+                        <p class="meta-value">$@MisR.Precio COP / Noche</p>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</section>

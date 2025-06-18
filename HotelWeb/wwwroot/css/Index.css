@@ -1,0 +1,288 @@
+﻿/* --- Body --- */
+
+.main-container {
+    display: flex;
+    align-items: center; /* centra verticalmente texto y cartas */
+    height: 600px;
+    padding: 0 5%;
+    gap: 40px;
+}
+
+.welcome-text {
+    flex: 0 0 350px; /* ancho fijo para texto */
+    max-width: 350px;
+    color: #F1F1F1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    padding-left: 120px;
+}
+
+    .welcome-text h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .welcome-text span {
+        font-weight: 800;
+        background: linear-gradient(90deg, #535C91, #9290C3, #CBD0F7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .welcome-text p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-top: 5px;
+        color: #F1F1F1;
+    }
+
+/* Aquí dejas intacto tu CSS original para las cartas */
+.floating-cards {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card {
+    position: absolute;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Tamaños ajustados */
+.center-card {
+    width: 320px;
+    height: 400px;
+    z-index: 3;
+    top: 50%;
+    left: 65%;
+    transform: translate(-40%, -50%);
+}
+
+.small-card {
+    width: 140px; /* subido de 120px */
+    height: 140px;
+    z-index: 2;
+}
+
+.tiny-card {
+    width: 120px; /* subido de 70px */
+    height: 120px;
+    z-index: 1;
+}
+
+/* Posiciones más juntas */
+/* Pequeñas cartas a la izquierda */
+.top-left {
+    top: 30%;
+    left: 30%;
+    transform: translate(-10%, -75%);
+}
+
+.mid-left {
+    top: 50%;
+    left: 20%;
+    transform: translate(-1%, -50%);
+}
+
+.bottom-left {
+    bottom: 25%;
+    left: 42%;
+    transform: translate(-80%, 50%);
+}
+
+/* SVG decorativos de fondo */
+.svg-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.svg-deco {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    filter: blur(80px);
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+/* Puedes mover y ajustar los blobs como gustes */
+.deco-1 {
+    top: -150px;
+    left: -100px;
+}
+
+.deco-2 {
+    bottom: -100px;
+    right: -120px;
+}
+
+
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -150px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1400px;
+    gap: 2rem;
+}
+
+.hero-left,
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #F1F1F1;
+}
+
+    .hero-left h2,
+    .hero-right h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .hero-left p,
+    .hero-right p {
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+
+    .hero-left a,
+    .hero-right a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1.5px solid #535C91;
+        border-radius: 150px;
+        background-color: transparent;
+        color: #F1F1F1;
+        font-weight: bold;
+        transition: all 0.5s ease;
+        padding: 10px 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+    }
+
+        .hero-left a:hover {
+            background-color: #535C91;
+            animation: glow 1.5s infinite alternate;
+            transform: scale(1.05);
+        }
+
+        .hero-right a:hover {
+            background-color: #535C91;
+            animation: glow 1.5s infinite alternate;
+            transform: scale(1.05);
+        }
+
+.hero-center {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 700px;
+    height: 800px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+    /* Ajuste del degradado */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, transparent);
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    filter: blur(0.5px);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+
+
+.hero-title {
+    position: absolute;
+    top: 580px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    font-weight: 900;
+    color: #F1F1F1;
+    letter-spacing: 2px;
+    font-family: "Montserrat", sans-serif;
+    pointer-events: none;
+}
+
+
+/* --- Footer --- */
+.footer {
+    color: #F1F1F1;
+    padding: 2rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    .footer-content a {
+        text-decoration: none;
+    }
+
+.footer-logo {
+    font-family: logo;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #CBD0F7;
+}
+
+.footer-rights {
+    font-size: 0.9rem;
+}

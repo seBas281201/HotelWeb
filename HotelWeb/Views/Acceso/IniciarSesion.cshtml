@@ -1,0 +1,51 @@
+﻿@model HotelWeb.ViewModels.IniciarSesionVM;
+<title>Sang - Iniciar Sesión</title>
+<link href="~/css/IniciarSesion.css" rel="stylesheet" asp-append-version="true" />
+<section class="hero-section">
+    <div class="hero-wrapper">
+        <div class="hero-text">
+            <h1>
+                ¿Ya tienes una cuenta?
+                <span class="sang-container">
+                    <span class="gradient-text">inicia sesión</span>
+                    <svg class="decorative-curve" width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="sangGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#9A8CFF" />
+                                <stop offset="50%" stop-color="#6F5CC2" />
+                                <stop offset="100%" stop-color="#3E3A70" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M0,30 C50,10 150,10 200,30" stroke="url(#sangGradient)" stroke-width="3" fill="none" />
+                        <path d="M0,35 C50,15 150,15 200,35" stroke="url(#sangGradient)" stroke-width="2" fill="none" opacity="0.6" />
+                    </svg>
+                </span>
+                aquí
+            </h1>
+            <p>y disfruta del mejor servicio de reservaciones del sector.</p>
+        </div>
+        <div class="register-container">
+            <h2 class="register-title">Inicia Sesión</h2>
+            <form asp-controller="Acceso" asp-action="IniciarSesion" method="post" class="register-form">
+                <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+                <div class="form-group email-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required asp-for="Correo" />
+                </div>
+                <div class="form-group password-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required asp-for="Contrasenia" />
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+
+                @if (ViewData["MensajeError"] != null)
+                {
+                        <div class="form-warning">
+                        @ViewData["MensajeError"]
+                        </div>
+                }
+
+            </form>
+        </div>
+    </div>
+</section>

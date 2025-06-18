@@ -1,0 +1,306 @@
+﻿
+.home-section {
+    position: relative;
+    overflow: hidden;
+    margin: 3rem auto;
+    width: 80%;
+    max-width: 1150px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 0 0rem 2rem; /* QUITA padding derecho */
+}
+
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    gap: 3rem;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 500px;
+    padding-top: 0; /* Asegúrate de no tener un padding innecesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem; /* reduce el espacio entre h1, p y el botón */
+}
+
+
+    .text-content h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: #D1D1D1;
+    }
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    z-index: 10; /* aseguramos que esté encima */
+    padding: 8px 14px;
+    width: fit-content;
+    max-width: unset;
+}
+
+    .cta-button:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+.image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    margin-right: -2rem; /* empuja la imagen más allá del borde redondeado */
+    position: relative; /* Asegura que el SVG esté posicionado relativamente a esto */
+    z-index: 1; /* Imagen encima del SVG */
+}
+
+
+    .image-wrapper img {
+        width: 100%;
+        height: auto;
+        max-height: 650px;
+        object-fit: cover;
+        transform: none; /* elimina translateX que la aleja del borde */
+        position: relative;
+        z-index: 2;
+    }
+
+.svg-behind-image {
+    position: absolute;
+    right: 18%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    z-index: 0;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.glass-card {
+    position: absolute;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.3rem 1.3rem;
+    color: #F1F1F1;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 150px;
+}
+
+.card-1 {
+    top: 65%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+    .card-1 h4 {
+        margin-bottom: 10px;
+    }
+
+.card-2 {
+    top: 25%;
+    right: 5%;
+    z-index: 21;
+}
+
+    .card-2 h4 {
+        margin-bottom: 10px;
+    }
+
+.decorative-svg {
+    position: absolute;
+    bottom: -40px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+
+.info-cards {
+    margin: -20px auto; /* centrado horizontal con margen superior */
+    display: flex;
+    justify-content: center; /* centra las cards si no llenan todo el espacio */
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1150px;
+}
+
+
+.info-card {
+    flex: 1;
+    min-width: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+    .info-card h2 {
+        font-size: 1.8rem;
+        color: #F1F1F1;
+    }
+
+    .info-card p {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+.textHotel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 135px;
+    margin-bottom: 85px;
+}
+
+.offers-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.offer-card {
+    flex: 0 0 calc(33.333% - 2rem);
+    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .offer-card {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-card {
+        flex: 0 0 100%;
+    }
+}
+
+.offer-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.offer-info {
+    padding: 1rem 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.offer-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1.2rem 1.2rem;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.features {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.included {
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-weight: bold;
+    color: #a0e8af;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #F1F1F1;
+}
+
+.night {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: -8px;
+}
+
+.cta-offer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+    .cta-offer:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }

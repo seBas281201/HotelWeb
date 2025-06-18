@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\almohadas.jpg" />
+    <None Include="wwwroot\css\calendario.jpg" />
+    <None Include="wwwroot\css\cama.jpg" />
+    <None Include="wwwroot\css\comida.jpg" />
+    <None Include="wwwroot\css\habitacion.jpg" />
+    <None Include="wwwroot\css\HabitacionBarcelona.jpg" />
+    <None Include="wwwroot\css\HabitacionCartagena.jpg" />
+    <None Include="wwwroot\css\HabitacionTokio.jpg" />
+    <None Include="wwwroot\css\SedeBarcelona.png" />
+    <None Include="wwwroot\css\SedeCartagena.png" />
+    <None Include="wwwroot\css\SedePrincipal.jpg" />
+    <None Include="wwwroot\css\SedeTokio.png" />
+    <None Include="wwwroot\css\sofa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="imgs\" />
+  </ItemGroup>
+
+</Project>
