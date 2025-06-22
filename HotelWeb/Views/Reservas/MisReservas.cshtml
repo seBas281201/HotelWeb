@@ -50,6 +50,7 @@
                     <div class="meta-row top-row">
                         <div class="meta-block">
                             <p class="meta-label">ID reserva</p>
+                            <input type="hidden" name="idReserva" value="@MisR.IdReserva" />
                             <p class="meta-value">@MisR.IdReserva</p>
                         </div>
                         <div class="meta-block">
@@ -74,6 +75,27 @@
                     <div class="meta-block">
                         <p class="meta-label">Precio</p>
                         <p class="meta-value">$@MisR.Precio COP / Noche</p>
+                    </div>
+                    <div class="meta-row bottom-row">
+                        <div class="meta-block">
+                            <p class="meta-label">Estado</p>
+                            @if(MisR.Estado == 2){
+
+                                <p class="meta-value">Activa</p>
+
+                            }
+                            else{
+
+                                <p class="meta-value">Inactiva</p>
+
+                            }
+                        </div>
+                        <div class="meta-block">
+                            <form method="post" asp-action="CancelarReservas" asp-controller="Reservas">
+                                <input type="hidden" name="idReserva" value="@MisR.IdReserva" />
+                                <button type="submit" class="btn-cancelar">Cancelar reserva</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

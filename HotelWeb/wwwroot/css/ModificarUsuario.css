@@ -1,0 +1,202 @@
+﻿.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem; 
+    min-height: 60vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #F1F1F1;
+}
+
+.hero-text {
+    flex: 1 1 45%;
+    max-width: 480px;
+    font-family: "Montserrat", sans-serif;
+}
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin-top: 0.5rem;
+    }
+
+.sang-container {
+    position: relative;
+    display: inline-block;
+}
+
+.decorative-curve {
+    position: absolute;
+    top: 55%;
+    left: 0px;
+    pointer-events: none;
+}
+
+.gradient-text {
+    font-weight: 800;
+    background: linear-gradient(90deg, #535C91, #9290C3, #CBD0F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.modification-form {
+    flex: 1 1 45%;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #F1F1F1;
+}
+
+.form-respuesta {
+    margin-top: 1.2rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    background: rgba(83, 92, 145, 0.15);
+    border: 1px solid rgba(146, 144, 195, 0.25);
+    color: #CBD0F7;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(146, 144, 195, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category {
+    font-size: 0.9rem;
+    color: #CBD0F7;
+}
+
+.title {
+    font-size: 1.4rem;
+    margin: 0.2rem 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 0.4rem;
+}
+
+    .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #CBD0F7;
+    }
+
+    .form-group input {
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        border: 1px solid #535C91;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #F1F1F1;
+        font-family: "Montserrat", sans-serif;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #9290C3;
+            box-shadow: 0 0 0 2px rgba(146, 144, 195, 0.3);
+        }
+
+    .form-group select:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(146, 144, 195, 0.3);
+    }
+
+    .form-group select {
+        padding: 0.6rem;
+        border-radius: 10px;
+        border: none;
+        background: #1B1A55;
+        color: #F1F1F1;
+        font-size: 0.95rem;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+    }
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.aplicar,
+.back-button {
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.aplicar {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 20px;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    white-space: nowrap;
+    max-width: 100%;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+    .aplicar:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+.back-button {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 20px;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    white-space: nowrap;
+    max-width: 100%;
+    text-decoration: none;
+}
+
+    .back-button:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }

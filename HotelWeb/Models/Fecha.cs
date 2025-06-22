@@ -11,5 +11,9 @@ public partial class Fecha
 
     public DateOnly? FechaSalida { get; set; }
 
+    public int? IdDisponibilidad { get; set; }
+
+    public virtual Disponibilidade? IdDisponibilidadNavigation { get; set; }
+
     public virtual ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
 }

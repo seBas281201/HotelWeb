@@ -33,6 +33,7 @@
             @if(User.Identity.IsAuthenticated){
 
                 var userCorreo = ClaimsHelper.GetEmail(User);
+                var userID = ClaimsHelper.GetRole(User);
 
                 <div class="user-menu">
                     <button id="userButton" class="user-icon-btn">
@@ -40,8 +41,15 @@
                     </button>
                     <div class="dropdown-menu" id="userDropdown">
                         <p>@userCorreo</p>
-                        <a asp-controller="Reservas" asp-action="MisReservas">Mis reservas</a>
-                        <a asp-controller="Home" asp-action="CerrarSesion">Cerrar sesión</a>
+                        @if(userID.Equals("1")){
+                            <a asp-controller="Reservas" asp-action="MisReservas">Mis reservas</a>
+                            <a asp-controller="Home" asp-action="CerrarSesion">Cerrar sesión</a>
+                        }
+                        else{
+                            <a asp-controller="Reservas" asp-action="MisReservas">Mis reservas</a>
+                            <a asp-controller="Admin" asp-action="VerModulo">Módulo administrador</a>
+                            <a asp-controller="Home" asp-action="CerrarSesion">Cerrar sesión</a>
+                        }
                     </div>
                 </div>
             }

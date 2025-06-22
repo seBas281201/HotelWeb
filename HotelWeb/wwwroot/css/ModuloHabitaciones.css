@@ -1,0 +1,167 @@
+﻿
+.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    box-sizing: border-box;
+    margin-bottom: 150px;
+}
+
+.hero-text {
+    max-width: 800px;
+    width: 100%;
+}
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-top: 15px;
+    }
+
+.sang-container {
+    position: relative;
+    display: inline-block;
+}
+
+.decorative-curve {
+    position: absolute;
+    bottom: -20px;
+    left: 100px;
+    width: 120px;
+    height: auto;
+    pointer-events: none;
+}
+
+.gradient-text {
+    font-weight: 800;
+    background: linear-gradient(90deg, #535C91, #9290C3, #CBD0F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.offers-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.offer-card {
+    flex: 0 0 calc(33.333% - 2rem);
+    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .offer-card {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-card {
+        flex: 0 0 100%;
+    }
+}
+
+
+.offer-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.offer-info {
+    padding: 1rem 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.offer-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1.2rem 1.2rem;
+}
+
+.discount {
+    color: #ccc;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.included {
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-weight: bold;
+    color: #a0e8af;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #F1F1F1;
+}
+
+.night {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: -8px;
+}
+
+.cta-offer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+    .cta-offer:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }

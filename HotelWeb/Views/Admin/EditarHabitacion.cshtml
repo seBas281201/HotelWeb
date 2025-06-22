@@ -1,0 +1,85 @@
+﻿@model List<HotelWeb.ViewModels.HabitacionEditVM>
+
+<title>Sang - Editor de habitaciones</title>
+<link href="~/css/EditarHabitaciones.css" rel="stylesheet" asp-asp-append-version="true" />
+<section class="product-section">
+    <div class="product-container">
+        <div class="product-gallery">
+            @foreach(var ah in Model){
+                <div class="offer-info-box">
+                    <h4>Bloque de informacion actual de la habitación</h4>
+                    <h3>@ah.Nombre</h3>
+                    <p class="rating">@ah.Calificacion - <span class="rating-label">@ah.Categoria</span></p>
+                    <div class="features">
+                        @foreach (var linea in ah.DescripcionLista)
+                        {
+                            <p>@linea</p>
+                        }
+                    </div>
+                    <span class="included">✔ Todo incluido</span>
+                    <p class="price">@ah.Precio COP</p>
+                    <p class="night">por noche</p>
+                </div>
+            }
+        </div>
+
+        <div class="reservation-form">
+            <form asp-controller="Admin" asp-action="Editarhabitacion" method="post" class="edit-room-form">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <p class="category">Formulario para editar la habitación</p>
+                    <div class="form-group full-width">
+                        <label asp-for="@Model[i].Nombre">Nombre</label>
+                        <input asp-for="@Model[i].Nombre" class="form-control" />
+                        <input asp-for="@Model[i].IdHabitacion" type="hidden" value="@Model[i].IdHabitacion" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model[i].Calificacion">Calificación</label>
+                        <select asp-for="@Model[i].Calificacion" class="form-control">
+                            <option disabled selected>Selecciona una opción</option>
+                            <option value="3.0">3.0</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4.0">4.0</option>
+                            <option value="4.5">4.5</option>
+                            <option value="4.7">4.7</option>
+                            <option value="4.8">4.8</option>
+                            <option value="5.0">5.0</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model[i].Categoria">Categoría</label>
+                        <select asp-for="@Model[i].Categoria" class="form-control">
+                            <option disabled selected>Selecciona una opción</option>
+                            <option value="Básica">Básica</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Familiar">Familiar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label asp-for="@Model[i].DescripcionLista">Descripción</label>
+                        <textarea asp-for="@Model[i].DescripcionTextoPlano" rows="9" required></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label asp-for="@Model[i].Precio">Precio</label>
+                        <input asp-for="@Model[i].Precio" type="number" class="form-control" />
+                    </div>
+                    <div class="button-group full-width">
+                        <button type="submit" class="reservar">Completar edición</button>
+                        <a asp-controller="Admin" asp-action="ModuloHabitaciones" class="back-button">Regresar</a>
+                    </div>
+                    @if(TempData["Mensaje"] != null){
+
+                        <div class="form-warning">
+                            <p>@TempData["Mensaje"]</p>
+                        </div>
+                    }
+                }
+
+            </form>
+        </div>
+    </div>
+</section>

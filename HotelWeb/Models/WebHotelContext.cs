@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using HotelWeb.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelWeb.Models;
 
@@ -31,8 +31,8 @@ public partial class WebHotelContext : DbContext
     public virtual DbSet<TipoHabitacione> TipoHabitaciones { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-    public DbSet<MisReservasVM> MisReservasVMs { get; set; }
 
+    public DbSet<MisReservasVM> MisReservasVMs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -57,6 +57,11 @@ public partial class WebHotelContext : DbContext
             entity.Property(e => e.IdFecha).HasColumnName("id_fecha");
             entity.Property(e => e.FechaIngreso).HasColumnName("fecha_ingreso");
             entity.Property(e => e.FechaSalida).HasColumnName("fecha_salida");
+            entity.Property(e => e.IdDisponibilidad).HasColumnName("id_disponibilidad");
+
+            entity.HasOne(d => d.IdDisponibilidadNavigation).WithMany(p => p.Fechas)
+                .HasForeignKey(d => d.IdDisponibilidad)
+                .HasConstraintName("FK__fechas__id_dispo__01142BA1");
         });
 
         modelBuilder.Entity<Habitacione>(entity =>

@@ -11,6 +11,7 @@
         public DateOnly Ingreso { get; set; }
         public DateOnly Salida { get; set; }
         public int Precio { get; set; }
+        public int Estado { get; set; }
 
     }
 }

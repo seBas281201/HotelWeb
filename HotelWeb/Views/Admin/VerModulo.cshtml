@@ -1,0 +1,39 @@
+﻿<title>Sang - Módulo administrador</title>
+<link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true">
+<div class="hero-wrapper">
+    <div class="hero-text">
+        <h1>
+            Bienvenido al módulo de
+            <span class="sang-container">
+                <span class="gradient-text">administrador</span>
+                <svg class="decorative-curve" width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sangGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9A8CFF" />
+                            <stop offset="50%" stop-color="#6F5CC2" />
+                            <stop offset="100%" stop-color="#3E3A70" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,30 C50,10 150,10 200,30" stroke="url(#sangGradient)" stroke-width="3" fill="none" />
+                    <path d="M0,35 C50,15 150,15 200,35" stroke="url(#sangGradient)" stroke-width="2" fill="none" opacity="0.6" />
+                </svg>
+            </span>
+        </h1>
+        <p>Aqui podras gestionar usuarios y servicios.</p>
+    </div>
+</div>
+<section class="feature-section">
+    <div class="feature-card">
+        <img src="~/css/User.png" alt="3D Shape" class="background-3d" />
+        <h2>Gestión de usuarios</h2>
+        <p>Permite administrar usuarios de forma centralizada, asignando roles y niveles de acceso según sus funciones.</p>
+        <a asp-controller="Admin" asp-action="ModuloUsuarios" class="feature-button">Acceder <span>→</span></a>
+    </div>
+
+    <div class="feature-card">
+        <img src="~/css/Engranaje.png" alt="3D Shape" class="background-3d" />
+        <h2>Gestión de servicios</h2>
+        <p>Facilita el control integral de habitaciones y sedes, permitiendo definir categorías, disponibilidad, tarifas y características únicas.</p>
+        <a asp-controller="Admin" asp-action="ModuloHabitaciones" class="feature-button">Acceder <span>→</span></a>
+    </div>
+</section>

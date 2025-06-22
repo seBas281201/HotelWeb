@@ -34,7 +34,8 @@ namespace HotelWeb.Controllers
                 .Include(r => r.IdFechaNavigation)
                 .Where(r => r.IdHabitacion == reservaVM.IdHabitacion &&
                             r.IdFechaNavigation.FechaIngreso < reservaVM.FechaSalida &&
-                            r.IdFechaNavigation.FechaSalida > reservaVM.FechaIngreso)
+                            r.IdFechaNavigation.FechaSalida > reservaVM.FechaIngreso &&
+                            r.IdFechaNavigation.IdDisponibilidad == 2)
                 .ToListAsync();
 
             if (fechasEnUso.Any())
@@ -53,7 +54,7 @@ namespace HotelWeb.Controllers
                 reservaVM.IdHabitacion, IdUsuario, reservaVM.NroHuespedes
 
 
-                );
+             );
 
 
             TempData["MensajeInformacion"] = "Reserva añadida correctamente";
@@ -64,14 +65,15 @@ namespace HotelWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> MisReservas()
+        public IActionResult MisReservas()
         {
 
             int IdUsuario = int.Parse(ClaimsHelper.GetUserId(User));
 
                         string sql = @"select h.Nombre as NombreHabitacion, th.categoria as Categoria, h.Precio as Precio,
             r.id_reserva as IdReserva, r.nro_huespedes as Huespedes, 
-            s.pais as Sede, f.fecha_ingreso as Ingreso, f.fecha_salida as Salida
+            s.pais as Sede, f.fecha_ingreso as Ingreso, f.fecha_salida as Salida,
+            f.id_disponibilidad as Estado
             from reservas r
             inner join habitaciones h on r.id_habitacion = h.id_habitacion
             inner join tipo_habitaciones th on th.id_tipo = h.id_tipo
@@ -79,10 +81,19 @@ namespace HotelWeb.Controllers
             inner join sedes s on s.id_sede = h.id_sede 
             where r.id_usuario = {0}";
 
-            var reservas = await _context.Set<MisReservasVM>().FromSqlRaw(sql, IdUsuario).
-                ToListAsync();
+            var reservas = _context.Set<MisReservasVM>().FromSqlRaw(sql, IdUsuario).
+                ToList();
 
             return View(reservas);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CancelarReservas(int idReserva)
+        {
+
+            await _context.Database.ExecuteSqlInterpolatedAsync($"update f set f.id_disponibilidad = 1 from reservas r inner join fechas f on f.id_fecha = r.id_fecha where r.id_reserva = {idReserva}");
+            return RedirectToAction("MisReservas");
 
         }
 

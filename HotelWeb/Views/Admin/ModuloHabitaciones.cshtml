@@ -1,0 +1,59 @@
+﻿@model List<HotelWeb.ViewModels.HabitacionesVM>
+
+<title>Sang - Módulo habitaciones</title>
+<link href="~/css/ModuloHabitaciones.css" rel="stylesheet" asp-asp-append-version="true" />
+<div class="hero-wrapper">
+    <div class="hero-text">
+        <h1>
+            Aquí podras editar la
+            <span class="sang-container">
+                <span class="gradient-text">información</span>
+                <svg class="decorative-curve" width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sangGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9A8CFF" />
+                            <stop offset="50%" stop-color="#6F5CC2" />
+                            <stop offset="100%" stop-color="#3E3A70" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,30 C50,10 150,10 200,30" stroke="url(#sangGradient)" stroke-width="3" fill="none" />
+                    <path d="M0,35 C50,15 150,15 200,35" stroke="url(#sangGradient)" stroke-width="2" fill="none" opacity="0.6" />
+                </svg>
+            </span>
+        </h1>
+        <p>de las habitaciones existentes en el sistema</p>
+    </div>
+</div>
+<section class="offers-section">
+    @foreach (var h in Model)
+    {
+        <div class="offer-card">
+            <img src="@Url.Content(@h.UrlImagen)" class="offer-image" />
+            <div class="offer-info">
+                <h3>@h.Nombre</h3>
+                <p class="rating">@h.Calificacion - <span class="rating-label">@h.Categoria</span></p>
+            </div>
+            <div class="offer-details">
+
+                <div class="price-section">
+                    <div class="price-info">
+                        <div class="features">
+                            @foreach (var descrip in h.DescripcionLista)
+                            {
+
+                                <p>@descrip</p>
+
+                            }
+                        </div>
+                        <span class="included">✔ Todo incluido</span>
+                    </div>
+                    <p class="price">$@h.Precio COP</p>
+                    <p class="night">por noche</p>
+                    <a asp-controller="Admin" asp-action="EditarHabitacion" asp-route-id="@h.IdHabitacion" class="cta-offer">
+                        Editar
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</section>

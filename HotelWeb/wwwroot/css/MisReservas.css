@@ -166,6 +166,31 @@
     position: relative;
 }
 
+.meta-block a {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #535C91;
+  border-radius: 150px;
+  background-color: transparent;
+  color: #F1F1F1;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  margin-left: 15px;
+  padding: 6px 5px;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+.meta-block a:hover {
+  background-color: #535C91;
+  animation: glow 1.5s infinite alternate;
+  transform: scale(1.05);
+}
+
 .meta-label {
     font-size: 10px;
     color: #AAAAAA;

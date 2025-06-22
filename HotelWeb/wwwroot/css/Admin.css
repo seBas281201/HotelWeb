@@ -1,0 +1,127 @@
+﻿.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+    box-sizing: border-box;
+}
+
+.hero-text {
+    max-width: 800px;
+    width: 100%;
+}
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-top: 15px;
+    }
+
+.sang-container {
+    position: relative;
+    display: inline-block;
+}
+
+.decorative-curve {
+    position: absolute;
+    bottom: -20px;
+    left: 100px;
+    width: 120px;
+    height: auto;
+    pointer-events: none;
+}
+
+.gradient-text {
+    font-weight: 800;
+    background: linear-gradient(90deg, #535C91, #9290C3, #CBD0F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.feature-section {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 100px 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px 25px;
+    width: 450px;
+    height: 350px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-card h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .feature-card p {
+        font-size: 0.95rem;
+        font-weight: 300;
+        color: #dcdcdc;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+    }
+
+.feature-button {
+    border: 1.5px solid #535C91;
+    border-radius: 150px;
+    background-color: transparent;
+    color: #F1F1F1;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    top: 15px;
+}
+
+    .feature-button:hover {
+        background-color: #535C91;
+        animation: glow 1.5s infinite alternate;
+        transform: scale(1.05);
+    }
+
+.background-3d {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 80%;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(1px);
+}
