@@ -19,14 +19,14 @@ namespace HotelWeb.Controllers
 
         [Authorize]
         [HttpGet]
-        public IActionResult ReservaNY(int id)
+        public IActionResult Reservas(int id)
         {
             var habitacion = _context.Habitaciones.Find(id);
             return View(habitacion);
         }
 
         [HttpPost]
-        public async Task<IActionResult> ReservaNY(ReservaVM reservaVM)
+        public async Task<IActionResult> Reservas(ReservaVM reservaVM)
         {
             int IdUsuario = int.Parse(ClaimsHelper.GetUserId(User));
 
@@ -42,7 +42,7 @@ namespace HotelWeb.Controllers
             {
 
                 TempData["MensajeInformacion"] = "Esa franja de fechas no esta disponible para esta habitacion por el momento.";
-                return RedirectToAction("ReservaNY", new { id = reservaVM.IdHabitacion });
+                return RedirectToAction("Reservas", new { id = reservaVM.IdHabitacion });
 
 
             }
@@ -59,7 +59,7 @@ namespace HotelWeb.Controllers
 
             TempData["MensajeInformacion"] = "Reserva añadida correctamente";
 
-            return RedirectToAction("ReservaNY", new { id = reservaVM.IdHabitacion });
+            return RedirectToAction("Reservas", new { id = reservaVM.IdHabitacion });
 
 
         }

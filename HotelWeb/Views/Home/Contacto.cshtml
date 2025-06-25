@@ -1,0 +1,23 @@
+﻿<title>Sang - Contacto</title>
+<link rel="stylesheet" href="~/css/Contacto.css" asp-append-version="true">
+<section class="contact-section" id="contacto">
+    <div class="contact-container">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes dudas, sugerencias o necesitas ayuda? ¡Estamos aquí para ti!</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            </div>
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m2 21l21-9L2 3v7l15 2l-15 2z" /></svg>
+                Enviar mensaje
+            </button>
+        </form>
+    </div>
+</section>

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotelWeb.ViewModels;
-using HotelWeb.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Security.Claims;
 using HotelWeb.Helpers;
+using HotelWeb.Models;
+using HotelWeb.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelWeb.Controllers
 {
@@ -17,21 +19,38 @@ namespace HotelWeb.Controllers
 
         }
 
+        [Authorize]
         public IActionResult VerModulo()
         {
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "2")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             return View();
         }
 
         [HttpGet]
         public IActionResult ModuloUsuarios()
-        {   
+        {
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "2")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> ModuloUsuarios(UsuarioUpdateVM userUDT)
         {
-            
+
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "2")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             Usuario? usuarioExitente = await _context.Usuarios.Where(
                 
                 
@@ -83,7 +102,13 @@ namespace HotelWeb.Controllers
 
         public IActionResult ModuloHabitaciones()
         {
-                var habitaciones = _context.Habitaciones.
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "2")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
+            var habitaciones = _context.Habitaciones.
                 Include(h => h.IdTipoNavigation).
                 Select(h => new HabitacionesVM
                 {
@@ -104,6 +129,12 @@ namespace HotelWeb.Controllers
         [HttpGet]
         public IActionResult Editarhabitacion(int id)
         {
+
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "2")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var habitacion = _context.Habitaciones.
                 Include(h => h.IdTipoNavigation).
                 Where(h => h.IdHabitacion == id).
@@ -126,6 +157,11 @@ namespace HotelWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> Editarhabitacion(List<HabitacionEditVM> HabitacionUDT)
         {
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "2")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var HabitacionModificar = await _context.Habitaciones.
                 Include(h => h.IdTipoNavigation).
                 Where(h => h.IdHabitacion == HabitacionUDT[0].IdHabitacion).FirstOrDefaultAsync();

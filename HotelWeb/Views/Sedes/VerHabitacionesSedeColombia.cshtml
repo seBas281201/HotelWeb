@@ -1,0 +1,84 @@
+﻿@model List<HotelWeb.ViewModels.HabitacionesVM>
+
+<title>Sang - Sede Principal</title>
+<link href="~/css/Habitaciones.css" rel="stylesheet" />
+<section class="home-section">
+    <div class="home-content">
+        <div class="text-content">
+            <h1>Sede Cartagena<br>Colombia</h1>
+            <p>Nuestra sede en Cartagena encarna nuestra esencia: calidez caribeña, confort sofisticado y una experiencia exclusiva.</p>
+        </div>
+        <div class="image-wrapper">
+            <svg class="svg-behind-image" viewBox="0 0 200 200">
+                <path fill="white" fill-opacity="0.05"
+                      d="M40,-60C52,-50,62,-40,65,-28C68,-16,64,-2,57,9C49,20,38,28,27,36C16,44,4,51,-7,54C-18,58,-29,58,-40,51C-51,44,-62,31,-66,17C-71,3,-68,-11,-62,-23C-56,-35,-47,-44,-36,-55C-25,-66,-13,-79,0,-79C13,-79,27,-66,40,-60Z"
+                      transform="translate(100 100)" />
+            </svg>
+            <img src="~/css/SedeCartagena.png" alt="Edificio" />
+        </div>
+        <div class="glass-card card-1">
+            <h4> 📍 Cartagena</h4>
+            <span>Cra. 1 #1A-23</span>
+        </div>
+        <div class="glass-card card-2">
+            <h4>☀️ 31°</h4>
+            <span>Junio 2025</span>
+        </div>
+        <svg class="decorative-svg" viewBox="0 0 200 200">
+            <path fill="white" fill-opacity="0.05"
+                  d="M40,-60C52,-50,62,-40,65,-28C68,-16,64,-2,57,9C49,20,38,28,27,36C16,44,4,51,-7,54C-18,58,-29,58,-40,51C-51,44,-62,31,-66,17C-71,3,-68,-11,-62,-23C-56,-35,-47,-44,-36,-55C-25,-66,-13,-79,0,-79C13,-79,27,-66,40,-60Z"
+                  transform="translate(100 100)" />
+        </svg>
+    </div>
+</section>
+<div class="info-cards">
+    <div class="info-card">
+        <h2>4M+</h2>
+        <p>Clientes satisfechos</p>
+    </div>
+    <div class="info-card">
+        <h2>15+</h2>
+        <p>Habitaciones Premium</p>
+    </div>
+    <div class="info-card">
+        <h2>5+</h2>
+        <p>Años de experiencia</p>
+    </div>
+</div>
+<h1 class="textHotel">
+    Habitaciones según disponibilidad virtual
+</h1>
+<section class="offers-section">
+    @foreach (var h in Model)
+    {
+        <div class="offer-card">
+            <img src="@Url.Content(@h.UrlImagen)" class="offer-image" />
+            <div class="offer-info">
+                <h3>@h.Nombre</h3>
+                <p class="rating">@h.Calificacion - <span class="rating-label">@h.Categoria</span></p>
+            </div>
+            <div class="offer-details">
+
+                <div class="price-section">
+                    <div class="price-info">
+                        <div class="features">
+                            @foreach (var descrip in h.DescripcionLista)
+                            {
+
+                                <p>@descrip</p>
+
+                            }
+                        </div>
+                        <span class="included">✔ Todo incluido</span>
+                    </div>
+                    <p class="price">$@h.Precio COP</p>
+                    <p class="night">por noche</p>
+                    <a asp-controller="Reservas" asp-action="Reservas" asp-route-id="@h.IdHabitacion" class="cta-offer">
+                        Reservar
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+

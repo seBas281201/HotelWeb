@@ -27,6 +27,11 @@ namespace HotelWeb.Controllers
             return View();
         }
 
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> CerrarSesion()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
