@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelWeb", "HotelWeb\HotelWeb.csproj", "{6732A52D-65A6-48D6-9FA4-46BDF593C68B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasProyecto", "PruebasProyecto\PruebasProyecto.csproj", "{EB07FDF0-0090-4714-9D2C-80E735B003C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{6732A52D-65A6-48D6-9FA4-46BDF593C68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6732A52D-65A6-48D6-9FA4-46BDF593C68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6732A52D-65A6-48D6-9FA4-46BDF593C68B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB07FDF0-0090-4714-9D2C-80E735B003C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB07FDF0-0090-4714-9D2C-80E735B003C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB07FDF0-0090-4714-9D2C-80E735B003C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB07FDF0-0090-4714-9D2C-80E735B003C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01A644CB-1EA9-4600-BBEA-AD37B4062BC6}
 	EndGlobalSection
 EndGlobal
