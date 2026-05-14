@@ -260,20 +260,6 @@ destinado a pruebas unitarias.
 
 ---
 
-# 📸 Capturas Recomendadas
-
-Puedes agregar capturas en esta sección:
-
-```md
-## 📷 Capturas
-
-![Inicio](ruta-imagen)
-![Habitaciones](ruta-imagen)
-![Reservas](ruta-imagen)
-```
-
----
-
 # 🚀 Posibles Mejoras Futuras
 
 * Integración con pasarelas de pago.
